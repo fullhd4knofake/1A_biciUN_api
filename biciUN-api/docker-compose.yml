@@ -1,20 +1,13 @@
 version: '2.1'
 services:
   # Cambiar el academy por el nombre de nuestra app
-  academy-api:
+  biciUN-api:
     build: .
     environment:
-      # Cambiar el 5000 por el puerto donde desplegaremos GraphQL
-      PORT: '5000'
+      PORT: '4500'
       SHOW_URLS: 'true'
       USERS_URL: '192.168.99.101'
       USERS_PORT: '3001'
       USERS_ENTRY: 'users/'
-      COURSES_URL: '192.168.99.101'
-      COURSES_PORT: '4001'
-      COURSES_ENTRY: 'courses/'
-      GRADES_URL: '192.168.99.101'
-      GRADES_PORT: '4002'
-      GRADES_ENTRY: 'grades/'
     ports:
-      - '5000:5000'
+      - '4500:4500'
