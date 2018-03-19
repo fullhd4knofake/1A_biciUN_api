@@ -1,5 +1,5 @@
 {
-	"name": "sa_academy_ms",
+	"name": "1A_biciUN_ms",
 	"version": "1.0.0",
 	"description": "",
 	"main": "src/index.js",
@@ -18,7 +18,7 @@
 		]
 	},
 	"keywords": [],
-	"author": "Jeisson Vergara",
+	"author": "1A team",
 	"license": "Universidad Nacional de Colombia",
 	"dependencies": {
 		"@koa/cors": "^2.2.1",
