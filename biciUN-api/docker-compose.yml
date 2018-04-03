@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   # Cambiar el academy por el nombre de nuestra app
-  biciUN-api:
+  biciun-api:
     build: .
     environment:
       PORT: '4500'
