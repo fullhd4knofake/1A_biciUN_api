@@ -1,13 +1,18 @@
 version: '2.1'
 services:
   # Cambiar el academy por el nombre de nuestra app
-  biciUN-api:
+  biciun-api:
     build: .
     environment:
       PORT: '4500'
       SHOW_URLS: 'true'
-      USERS_URL: '192.168.99.101'
+
+      USERS_URL: 'localhost'
       USERS_PORT: '3001'
       USERS_ENTRY: 'users/'
+      
+      PRESTAMOS_URL: 'localhost'
+      PRESTAMOS_PORT: '3002'
+      PRESTAMOS_ENTRY: 'prestamos/'
     ports:
       - '4500:4500'
