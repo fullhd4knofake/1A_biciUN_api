@@ -1,13 +1,13 @@
 FROM node:carbon-slim
 # Create app directory
-WORKDIR /git/biciUN-api
+WORKDIR /git/biciun-api
 
 # Install app dependencies
-COPY package.json /git/biciUN-api/
+COPY package.json /git/biciun-api/
 RUN npm install
 
 # Bundle app source
-COPY . /git/biciUN-api/
+COPY . /git/biciun-api/
 RUN npm run prepublish
 
 CMD [ "npm", "run", "runServer" ]
