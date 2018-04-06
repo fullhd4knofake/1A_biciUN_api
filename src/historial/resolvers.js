@@ -5,8 +5,8 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		all: (_) =>
-			getRequest(URL, ''),
+		allPrestamos: (_) => 
+			getRequest(URL, 'GET'),
 		prestamoById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},
@@ -14,7 +14,7 @@ const resolvers = {
 		createPrestamo: (_, { prestamo }) =>
 			generalRequest(`${URL}`, 'POST', prestamo),
 		updatePrestamo: (_, { id, prestamo }) =>
-			generaluserRequest(`${URL}/${id}`, 'PATCH', prestamo),
+			generalRequest(`${URL}/${id}`, 'PATCH', prestamo),
 		deletePrestamo: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
 	}

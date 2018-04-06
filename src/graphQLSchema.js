@@ -11,9 +11,9 @@ import {
 } from './users/typeDefs';
 
 import {
-	historialMutations,
-	historialQueries,
-	historialTypeDef
+	prestamosMutations,
+	prestamosQueries,
+	prestamosTypeDef
 } from './historial/typeDefs';
 /* import {
 	coursesMutations,
@@ -28,7 +28,7 @@ import {
 } from './grades/typeDefs'; */
 
 import usersResolvers from './users/resolvers';
-import historialResolvers from './historial/resolvers';
+import prestamosResolvers from './historial/resolvers';
 // import coursesResolvers from './courses/resolvers';
 // import gradesResolvers from './grades/resolvers';
 
@@ -37,21 +37,21 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		usersTypeDef,
-		historialTypeDef
+		prestamosTypeDef
 		// usersTypeDef,
 		// coursesTypeDef,
 		// gradesTypeDef
 	],
 	[
 		usersQueries,
-		historialQueries
+		prestamosQueries
 		// usersQueries,
 		// coursesQueries,
 		// gradesQueries
 	],
 	[
 		usersMutations,
-		historialMutations
+		prestamosMutations
 		// usersMutations,
 		// coursesMutations,
 		// gradesMutations
@@ -64,6 +64,6 @@ export default makeExecutableSchema({
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		usersResolvers,
-		historialResolvers
+		prestamosResolvers
 	)
 });

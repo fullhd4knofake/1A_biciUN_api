@@ -1,25 +1,25 @@
-export const historialTypeDef = `
+export const prestamosTypeDef = `
 type Prestamo {
     id: Int!
-    student_id: Int!
+    user_id: Int!
     bici_id: Int!
     solicitud: String
 }
 
 input PrestamoInput {
-    student_id: Int!
+    user_id: Int!
     bici_id: Int!
-    solicitud: String!
+    solicitud: String
 }
 `;
 
-export const historialQueries = `
+export const prestamosQueries = `
     allPrestamos: [Prestamo]!
     prestamoById(id: Int!): Prestamo!
 `;
 
-export const historialMutations = `
+export const prestamosMutations = `
     createPrestamo(prestamo: PrestamoInput!): Prestamo!
     deletePrestamo(id: Int!): Prestamo!
-    updatePrestamo(id: Int!, prestamo: PrestamoInput!): Prestamo!
+    updatePrestamo(id: Int!, Prestamo: PrestamoInput!): Prestamo!
 `;
