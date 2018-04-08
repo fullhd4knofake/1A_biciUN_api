@@ -6,7 +6,7 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		allPrestamos: (_) => 
-			getRequest(URL, 'GET'),
+			getRequest(URL,""),
 		prestamoById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},
