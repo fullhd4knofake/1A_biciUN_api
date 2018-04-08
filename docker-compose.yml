@@ -14,5 +14,10 @@ services:
       PRESTAMOS_URL: 'localhost'
       PRESTAMOS_PORT: '3002'
       PRESTAMOS_ENTRY: 'prestamos/'
+
+      #Alejandro
+      PRESTAMOS_URL: 'localhost'
+      PRESTAMOS_PORT: '3005'
+      PRESTAMOS_ENTRY: 'login/'
     ports:
       - '4500:4500'
