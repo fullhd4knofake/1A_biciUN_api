@@ -1,6 +1,7 @@
 export const loginTypeDef = `
 type Login {
     id: Int!
+    user: String
     email: String!
     password: String!
 }
