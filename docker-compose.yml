@@ -23,5 +23,9 @@ services:
       PROFILES_PHOTOS_URL: 'localhost'
       PROFILES_PHOTOS_PORT: '3003'
       PROFILES_PHOTOS_ENTRY: 'profilepictures/'
+      
+      LOGIN_URL: '192.168.99.102'
+      LOGIN_PORT: '5000'
+      LOGIN_ENTRY: 'login/'
     ports:
       - '4500:4500'
