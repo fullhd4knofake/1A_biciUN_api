@@ -6,17 +6,17 @@ const URL = `http://${url}:${port}/${entryPoint}`;
 const resolvers = {
 	Query: {
 		allLogin: (_) => 
-			getRequest(`${URL}show`,""),
+			getRequest(URL,""),
 		loginById: (_, { id }) =>
-			generalRequest(`${URL}show/${id}`, 'GET'),
+			generalRequest(`${URL}/${id}`, 'GET'),
 	},
 	Mutation: {
 		createLogin: (_, { login }) =>
-			generalRequest(`${URL}login`, 'POST', login),
+			generalRequest(`${URL}`, 'POST', login),
 		updateLogin: (_, { id, login }) =>
-			generalRequest(`${URL}update/${id}`, 'PATCH', login),
+			generalRequest(`${URL}/${id}`, 'PATCH', login),
 		deleteLogin: (_, { id }) =>
-			generalRequest(`${URL}delete/${id}`, 'DELETE')
+			generalRequest(`${URL}/${id}`, 'DELETE')
 	}
 };
 
