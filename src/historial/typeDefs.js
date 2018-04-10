@@ -11,6 +11,12 @@ input PrestamoInput {
     bici_id: Int!
     solicitud: String
 }
+
+input PrestamoInputEdit {
+    student_id: Int
+    bici_id: Int
+    solicitud: String
+}
 `;
 
 export const prestamosQueries = `
@@ -21,5 +27,5 @@ export const prestamosQueries = `
 export const prestamosMutations = `
     createPrestamo(prestamo: PrestamoInput!): Prestamo!
     deletePrestamo(id: Int!): Prestamo!
-    updatePrestamo(id: Int!, Prestamo: PrestamoInput!): Prestamo!
+    updatePrestamo(id: Int!, prestamo: PrestamoInputEdit!): Prestamo!
 `;

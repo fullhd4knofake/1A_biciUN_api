@@ -15,6 +15,11 @@ import {
 	prestamosQueries,
 	prestamosTypeDef
 } from './historial/typeDefs';
+
+import {
+	profilePicturesQueries,
+	profilePicturesTypeDef
+} from './profilepictures/typeDefs';
 /* import {
 	coursesMutations,
 	coursesQueries,
@@ -29,6 +34,7 @@ import {
 
 import usersResolvers from './users/resolvers';
 import prestamosResolvers from './historial/resolvers';
+import profilepicturesResolvers from './profilepictures/resolvers';
 // import coursesResolvers from './courses/resolvers';
 // import gradesResolvers from './grades/resolvers';
 
@@ -37,14 +43,16 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
 		usersTypeDef,
-		prestamosTypeDef
+		prestamosTypeDef,
+		profilePicturesTypeDef
 		// usersTypeDef,
 		// coursesTypeDef,
 		// gradesTypeDef
 	],
 	[
 		usersQueries,
-		prestamosQueries
+		prestamosQueries,
+		profilePicturesQueries
 		// usersQueries,
 		// coursesQueries,
 		// gradesQueries
@@ -64,6 +72,7 @@ export default makeExecutableSchema({
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		usersResolvers,
-		prestamosResolvers
+		prestamosResolvers,
+		profilepicturesResolvers
 	)
 });
