@@ -11,8 +11,8 @@ services:
       USERS_PORT: '3001'
       USERS_ENTRY: 'users/'
       
-      PRESTAMOS_URL: 'historial-ms'
+      PRESTAMOS_URL: 'localhost'
       PRESTAMOS_PORT: '3002'
-      PRESTAMOS_ENTRY: 'prestamos'
+      PRESTAMOS_ENTRY: 'prestamos/'
     ports:
-      - '5000:4500'
+      - '4500:4500'

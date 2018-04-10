@@ -21,5 +21,5 @@ export const prestamosQueries = `
 export const prestamosMutations = `
     createPrestamo(prestamo: PrestamoInput!): Prestamo!
     deletePrestamo(id: Int!): Prestamo!
-    updatePrestamo(id: Int!, prestamo: PrestamoInputUpdate!): Prestamo!
+    updatePrestamo(id: Int!, Prestamo: PrestamoInput!): Prestamo!
 `;
