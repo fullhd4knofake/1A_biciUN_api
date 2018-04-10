@@ -13,7 +13,7 @@ const resolvers = {
 	Mutation: {
 		createPrestamo: (_, { prestamo }) =>
 			generalRequest(`${URL}`, 'POST', prestamo),
-		updatePrestamo: (_, { id, prestamo }) =>
+		updatePrestamo: (_, { id, prestamo }) => 
 			generalRequest(`${URL}/${id}`, 'PATCH', prestamo),
 		deletePrestamo: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
