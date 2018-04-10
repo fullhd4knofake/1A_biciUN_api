@@ -14,5 +14,9 @@ services:
       PRESTAMOS_URL: '192.168.99.101'
       PRESTAMOS_PORT: '3002'
       PRESTAMOS_ENTRY: 'prestamos/'
+
+      PROFILES_PHOTOS_URL: 'localhost'
+      PROFILES_PHOTOS_PORT: '3003'
+      PROFILES_PHOTOS_ENTRY: 'profilepictures/'
     ports:
       - '4500:4500'
