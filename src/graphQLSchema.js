@@ -75,6 +75,6 @@ export default makeExecutableSchema({
 		{ JSON: GraphQLJSON }, // allows scalar JSON
 		usersResolvers,
 		prestamosResolvers,
-		loginxResolvers
+		loginResolvers
 	)
 });

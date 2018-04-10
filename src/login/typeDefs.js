@@ -1,14 +1,14 @@
 export const loginTypeDef = `
 type Login {
     id: Int!
-    user: String
+    name: String!
     email: String!
-    password: String!
+    pass: String!
 }
 
 input LoginInput {
-    email: String!
-    password: String!
+    name: String!
+    pass: String!
 }
 `;
 
