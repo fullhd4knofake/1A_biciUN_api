@@ -7,7 +7,8 @@ type Login {
 }
 
 input LoginInput {
-    name: String!
+    name: String
+    email: String!
     pass: String!
 }
 `;
@@ -20,5 +21,5 @@ export const loginQueries = `
 export const loginMutations = `
     createLogin(login: LoginInput!): Login!
     deleteLogin(id: Int!): Login!
-    updateLogin(id: Int!, Login: LoginInput!): Login!
+    updateLogin(id: Int!, login: LoginInput!): Login!
 `;
