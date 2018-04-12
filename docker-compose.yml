@@ -1,4 +1,4 @@
-version: '2.1'
+version: '2'
 services:
   # Cambiar el academy por el nombre de nuestra app
   biciun-api:
@@ -20,7 +20,7 @@ services:
       PRESTAMOS_PORT: '3005'
       PRESTAMOS_ENTRY: 'login/'
       
-      PROFILES_PHOTOS_URL: 'localhost'
+      PROFILES_PHOTOS_URL: '192.168.99.101'
       PROFILES_PHOTOS_PORT: '3003'
       PROFILES_PHOTOS_ENTRY: 'profilepictures/'
       

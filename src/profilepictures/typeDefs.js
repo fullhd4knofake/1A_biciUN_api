@@ -1,12 +1,12 @@
 export const profilePicturesTypeDef = `
 type ProfilePicture {
     id: Int!
-    Student: Int!
+    Student: String!
     Url: String
 }
 `;
 
 export const profilePicturesQueries = `
     allProfilePictures: [ProfilePicture]!
-    profilePictureById(id: Int!): ProfilePicture!
+    profilePictureById(id: String!): ProfilePicture!
 `;
