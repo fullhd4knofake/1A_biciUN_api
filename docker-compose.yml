@@ -28,8 +28,8 @@ services:
       LOGIN_PORT: '5000'
       LOGIN_ENTRY: 'login/'
 
-      LOGIN_URL: '192.168.99.102'
-      LOGIN_PORT: '3004'
-      LOGIN_ENTRY: 'bicicletas/'
+      BICICLETAS_URL: '192.168.99.102'
+      BICICLETAS_PORT: '3004'
+      BICICLETAS_ENTRY: 'bicicletas/'
     ports:
       - '4500:4500'
