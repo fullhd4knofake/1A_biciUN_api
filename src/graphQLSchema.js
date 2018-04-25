@@ -32,6 +32,11 @@ import {
 	bicicletasQueries,
 	bicicletasTypeDef
 } from './bicicletas/typeDefs';
+
+import {
+	authMutations,
+	authTypeDef
+} from './auth/typeDefs';
 /* import {
 	coursesMutations,
 	coursesQueries,
@@ -49,6 +54,7 @@ import prestamosResolvers from './historial/resolvers';
 import profilepicturesResolvers from './profilepictures/resolvers';
 import loginResolvers from './login/resolvers';
 import bicicletasResolvers from './bicicletas/resolvers';
+import authResolvers from './auth/resolvers';
 // import coursesResolvers from './courses/resolvers';
 // import gradesResolvers from './grades/resolvers';
 
@@ -60,7 +66,8 @@ const mergedTypeDefs = mergeSchemas(
 		prestamosTypeDef,
 		profilePicturesTypeDef,
 		loginTypeDef,
-		bicicletasTypeDef
+		bicicletasTypeDef,
+		authTypeDef
 		// usersTypeDef,
 		// coursesTypeDef,
 		// gradesTypeDef
@@ -79,7 +86,8 @@ const mergedTypeDefs = mergeSchemas(
 		usersMutations,
 		prestamosMutations,
 		loginMutations,
-		bicicletasMutations
+		bicicletasMutations,
+		authMutations
 		// usersMutations,
 		// coursesMutations,
 		// gradesMutations
@@ -95,6 +103,7 @@ export default makeExecutableSchema({
 		prestamosResolvers,
 		profilepicturesResolvers,
 		loginResolvers,
-		bicicletasResolvers
+		bicicletasResolvers,
+		authResolvers
 	)
 });
