@@ -10,4 +10,6 @@ RUN npm install
 COPY . /git/biciun-api/
 RUN npm run prepublish
 
+EXPOSE 4500
+
 CMD [ "npm", "run", "runServer" ]
