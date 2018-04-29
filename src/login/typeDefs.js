@@ -1,20 +1,18 @@
 export const loginTypeDef = `
 type Login {
-    id: Int!
-    name: String!
-    email: String!
-    pass: String!
+    id: String!
+    token: String!
+    date: String!
 }
 
 input LoginInput {
-    name: String!
-    pass: String!
+    id: String!
 }
 `;
 
 export const loginQueries = `
     allLogin: [Login]!
-    loginById(id: Int!): Login!
+    loginById(token: String!): Login!
 `;
 
 export const loginMutations = `
