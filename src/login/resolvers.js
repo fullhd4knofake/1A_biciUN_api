@@ -7,8 +7,8 @@ const resolvers = {
 	Query: {
 		allLogin: (_) => 
 			getRequest(URL,""),
-		loginById: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'GET'),
+		loginById: (_, { token }) =>
+			generalRequest(`${URL}/${token}`, 'GET'),
 	},
 	Mutation: {
 		createLogin: (_, { login }) =>
