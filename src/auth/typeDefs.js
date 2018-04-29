@@ -1,11 +1,11 @@
 export const authTypeDef = `
     type Auth {
-        email: String!
+        id: String!
         password: String!
         answer: String!
     }
     input AuthInput {
-        email: String!
+        id: String!
         password: String!
     }
 `;
