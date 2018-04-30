@@ -20,7 +20,7 @@ input PrestamoInputEdit {
 `;
 
 export const prestamosQueries = `
-    allPrestamos: [Prestamo]!
+    allPrestamos(token: String!): [Prestamo]!
     prestamoById(id: Int!): Prestamo!
 `;
 
