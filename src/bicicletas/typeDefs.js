@@ -29,5 +29,5 @@ export const bicicletasQueries = `
 export const bicicletasMutations = `
     createBicicleta(token: String!, bicicleta: BicicletaInput!): Bicicleta!
     deleteBicicleta(serial: Int!): Bicicleta!
-    updateBicicleta(serial: Int!, bicicleta: BicicletaInputEdit!): Bicicleta!
+    updateBicicleta(token: String!, serial: Int!, bicicleta: BicicletaInputEdit!): Bicicleta!
 `;
