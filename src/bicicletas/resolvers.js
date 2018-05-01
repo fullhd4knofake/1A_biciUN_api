@@ -39,10 +39,15 @@ const resolvers = {
 			else
 				throw "Autenticacion invalida"
 		},
-		/* updateBicicleta: (_, { serial, bicicleta }) => 
-			generalRequest(`${URL}/edit/${serial}`, 'PATCH', bicicleta), */
-		deleteBicicleta: (_, { serial }) =>
-			generalRequest(`${URL}/delete/${serial}`, 'DELETE')
+		deleteBicicleta: async (_, { token, serial }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (response.id)
+				return generalRequest(`${URL}/delete/${serial}`, 'DELETE');
+			else
+				throw "Autenticacion invalida"
+		}
+		/* deleteBicicleta: (_, { serial }) =>
+			generalRequest(`${URL}/delete/${serial}`, 'DELETE') */
 	}
 };
 

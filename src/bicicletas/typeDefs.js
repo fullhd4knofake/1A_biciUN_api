@@ -28,6 +28,6 @@ export const bicicletasQueries = `
 
 export const bicicletasMutations = `
     createBicicleta(token: String!, bicicleta: BicicletaInput!): Bicicleta!
-    deleteBicicleta(serial: Int!): Bicicleta!
+    deleteBicicleta(token: String!, serial: Int!): Bicicleta!
     updateBicicleta(token: String!, serial: Int!, bicicleta: BicicletaInputEdit!): Bicicleta!
 `;
