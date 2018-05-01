@@ -12,8 +12,15 @@ const resolvers = {
 			else
 				throw "Autenticacion invalida"
 		},
-		userById: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'GET'),
+		userById: async (_, { token, id }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (response.id)
+				return generalRequest(`${URL}/${id}`, 'GET');
+			else
+				throw "Autenticacion invalida"
+		},
+		/* userById: (_, { id }) =>
+			generalRequest(`${URL}/${id}`, 'GET'), */
 	},
 	Mutation: {
 		createUser: async (_, { token, user }) => {
