@@ -30,10 +30,15 @@ const resolvers = {
 			else
 				throw "Autenticacion invalida"
 		},
-		/* createPrestamo: (_, { prestamo }) =>
-			generalRequest(`${URL}`, 'POST', prestamo), */
-		updatePrestamo: (_, { id, prestamo }) => 
-			generalRequest(`${URL}/${id}`, 'PATCH', prestamo),
+		updatePrestamo: async (_, { token, id, prestamo }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (response.id)
+				return generalRequest(`${URL}/${id}`, 'PATCH', prestamo);
+			else
+				throw "Autenticacion invalida"
+		},
+		/* updatePrestamo: (_, { id, prestamo }) => 
+			generalRequest(`${URL}/${id}`, 'PATCH', prestamo), */
 		deletePrestamo: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
 	}

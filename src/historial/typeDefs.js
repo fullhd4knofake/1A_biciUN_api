@@ -26,6 +26,6 @@ export const prestamosQueries = `
 
 export const prestamosMutations = `
     createPrestamo(token: String!, prestamo: PrestamoInput!): Prestamo!
-    deletePrestamo(id: Int!): Prestamo!
-    updatePrestamo(id: Int!, prestamo: PrestamoInputEdit!): Prestamo!
+    deletePrestamo(token: String!, id: Int!): Prestamo!
+    updatePrestamo(token: String!, id: Int!, prestamo: PrestamoInputEdit!): Prestamo!
 `;
