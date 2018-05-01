@@ -12,8 +12,15 @@ const resolvers = {
 			else
 				throw "Autenticacion invalida"
 		},
-		prestamoById: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'GET'),
+		prestamoById: async (_, { token, id }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (response.id)
+				return generalRequest(`${URL}/${id}`, 'GET');
+			else
+				throw "Autenticacion invalida"
+		},
+		/* prestamoById: (_, { id }) =>
+			generalRequest(`${URL}/${id}`, 'GET'), */
 	},
 	Mutation: {
 		createPrestamo: (_, { prestamo }) =>

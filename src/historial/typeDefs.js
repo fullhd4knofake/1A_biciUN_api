@@ -21,7 +21,7 @@ input PrestamoInputEdit {
 
 export const prestamosQueries = `
     allPrestamos(token: String!): [Prestamo]!
-    prestamoById(id: Int!): Prestamo!
+    prestamoById(token: String!, id: Int!): Prestamo!
 `;
 
 export const prestamosMutations = `
