@@ -23,7 +23,7 @@ export const usersQueries = `
 `;
 
 export const usersMutations = `
-    createUser(user: UserInput!): User!
+    createUser(token: String!, user: UserInput!): User!
     deleteUser(id: Int!): User!
     updateUser(id: Int!, user: UserInput!): User!
 `;

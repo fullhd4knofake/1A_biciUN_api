@@ -16,8 +16,15 @@ const resolvers = {
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},
 	Mutation: {
-		createUser: (_, { user }) =>
-			generalRequest(`${URL}`, 'POST', user),
+		createUser: async (_, { token, user }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (response.id)
+				return generalRequest(`${URL}`, 'POST', user);
+			else
+				throw "Autenticacion invalida"
+		},
+		/* createUser: (_, { user }) =>
+			generalRequest(`${URL}`, 'POST', user), */
 		updateUser: (_, { id, user }) =>
 			generalRequest(`${URL}/${id}`, 'PUT', user),
 		deleteUser: (_, { id }) =>
