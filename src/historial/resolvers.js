@@ -23,8 +23,15 @@ const resolvers = {
 			generalRequest(`${URL}/${id}`, 'GET'), */
 	},
 	Mutation: {
-		createPrestamo: (_, { prestamo }) =>
-			generalRequest(`${URL}`, 'POST', prestamo),
+		createPrestamo: async (_, { token, prestamo }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (response.id)
+				return generalRequest(`${URL}`, 'POST', prestamo);
+			else
+				throw "Autenticacion invalida"
+		},
+		/* createPrestamo: (_, { prestamo }) =>
+			generalRequest(`${URL}`, 'POST', prestamo), */
 		updatePrestamo: (_, { id, prestamo }) => 
 			generalRequest(`${URL}/${id}`, 'PATCH', prestamo),
 		deletePrestamo: (_, { id }) =>

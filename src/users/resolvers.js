@@ -43,7 +43,7 @@ const resolvers = {
 				return generalRequest(`${URL}/${id}`, 'DELETE');
 			else
 				throw "Autenticacion invalida"
-		},
+		}
 		/* deleteUser: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE') */
 	}
