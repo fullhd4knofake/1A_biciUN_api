@@ -1,12 +1,17 @@
-import { generalRequest, getRequest } from '../utilities';
+import { generalRequest, getRequest, authToken  } from '../utilities';
 import { url, port, entryPoint } from './server';
 
 const URL = `http://${url}:${port}/${entryPoint}`;
 
 const resolvers = {
 	Query: {
-		allUsers: (_) =>
-			getRequest(URL, ''),
+		allUsers: async (_, { token }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (response.id)
+				return getRequest(URL,"");
+			else
+				throw "Autenticacion invalida"
+		},
 		userById: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'GET'),
 	},

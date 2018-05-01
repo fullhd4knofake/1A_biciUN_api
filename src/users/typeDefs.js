@@ -18,7 +18,7 @@ input UserInput {
 `;
 
 export const usersQueries = `
-    allUsers: [User]!
+    allUsers(token: String!): [User]!
     userById(id: Int!): User!
 `;
 
