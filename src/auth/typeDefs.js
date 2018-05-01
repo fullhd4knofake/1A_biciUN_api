@@ -1,8 +1,7 @@
 export const authTypeDef = `
     type Auth {
-        id: String!
-        password: String!
-        answer: String!
+        token: String!
+        expire: String!
     }
     input AuthInput {
         id: String!

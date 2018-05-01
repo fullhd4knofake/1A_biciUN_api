@@ -116,12 +116,29 @@ export function authToken(token) {
 	});
 }
 
+export function generateToken(id) {
+	return new Promise(resolve => {
 
-// export async function authToken(token){
-// 	var ans = null
-	
+		const data = JSON.stringify({
+			id: id
+		});
 
-// 	setTimeout( () => console.log("ok"), 2000 );
-
-// 	return ans;
-// }
+		console.log(`http://35.193.172.140:3005/login/`)
+		axios({
+			headers: { 'Content-Type': 'application/json' },
+			url: `http://35.193.172.140:3005/login`,
+			method: "POST",
+			responseType: 'json',
+			data: data
+		}).then(function (response) {
+			return {
+				expire: response.data.date,
+				token: response.data.token
+			}
+		}).then((data) =>
+			resolve(data)
+		).catch((data) => {
+			resolve(data)
+		})
+	});
+}
