@@ -19,7 +19,7 @@ input UserInput {
 
 export const usersQueries = `
     allUsers(token: String!): [User]!
-    userById(token: String!, id: Int!): User!
+    userById(token: String!): User!
 `;
 
 export const usersMutations = `
