@@ -23,10 +23,16 @@ const resolvers = {
 			else
 				throw "Autenticacion invalida"
 		},
-		/* createUser: (_, { user }) =>
-			generalRequest(`${URL}`, 'POST', user), */
+		updateUser: async (_, { token, id, user }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (response.id)
+				return generalRequest(`${URL}/${id}`, 'PUT', user);
+			else
+				throw "Autenticacion invalida"
+		},
+		/* 
 		updateUser: (_, { id, user }) =>
-			generalRequest(`${URL}/${id}`, 'PUT', user),
+			generalRequest(`${URL}/${id}`, 'PUT', user), */
 		deleteUser: (_, { id }) =>
 			generalRequest(`${URL}/${id}`, 'DELETE')
 	}

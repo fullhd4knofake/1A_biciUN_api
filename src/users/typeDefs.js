@@ -24,6 +24,6 @@ export const usersQueries = `
 
 export const usersMutations = `
     createUser(token: String!, user: UserInput!): User!
-    deleteUser(id: Int!): User!
-    updateUser(id: Int!, user: UserInput!): User!
+    deleteUser(token: String!, id: Int!): User!
+    updateUser(token: String!, id: Int!, user: UserInput!): User!
 `;
