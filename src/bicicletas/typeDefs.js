@@ -23,7 +23,7 @@ input BicicletaInputEdit {
 
 export const bicicletasQueries = `
     allBicicletas(token: String!): [Bicicleta]!
-    bicicletaById(serial: Int!): Bicicleta!
+    bicicletaById(token: String!, serial: Int!): Bicicleta!
 `;
 
 export const bicicletasMutations = `

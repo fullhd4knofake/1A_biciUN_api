@@ -12,8 +12,15 @@ const resolvers = {
 			else
 				throw "Autenticacion invalida"
 		},
-		bicicletaById: (_, { serial }) =>
-			generalRequest(`${URL}/${serial}`, 'GET'),
+		bicicletaById: async (_, { token, serial }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (response.id)
+				return generalRequest(`${URL}/${serial}`, 'GET');
+			else
+				throw "Autenticacion invalida"
+		},
+		/* bicicletaById: (_, { serial }) =>
+			generalRequest(`${URL}/${serial}`, 'GET'), */
 	},
 	Mutation: {
 		createBicicleta: async (_, { token, bicicleta }) => {
