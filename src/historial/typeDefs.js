@@ -22,6 +22,7 @@ input PrestamoInputEdit {
 export const prestamosQueries = `
     allPrestamos(token: String!): [Prestamo]!
     prestamoById(token: String!, id: Int!): Prestamo!
+    prestamosbyUser(token: String!): [Prestamo]!
 `;
 
 export const prestamosMutations = `

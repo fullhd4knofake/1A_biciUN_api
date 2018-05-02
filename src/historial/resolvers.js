@@ -8,7 +8,7 @@ const resolvers = {
 		allPrestamos: async (_, { token }) => {
 			var response = await authToken(token) //Esperar por la respueseta
 			if (response.id)
-				return getRequest(URL,"");
+				return getRequest(URL, "");
 			else
 				throw "Autenticacion invalida"
 		},
@@ -19,8 +19,18 @@ const resolvers = {
 			else
 				throw "Autenticacion invalida"
 		},
-		/* prestamoById: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'GET'), */
+		prestamosbyUser: async (_, { token }) => {
+			var response = await authToken(token) //Esperar por la respueseta
+			if (!response.id)
+				throw "Autenticacion invalida"
+			var allPrestamos = await getRequest(URL, "");
+			var prestamosUsuario = []
+			allPrestamos.forEach(prestamo => {
+				if (prestamo.student_id == response.id)
+					prestamosUsuario.push(prestamo)
+			});
+			return prestamosUsuario
+		},
 	},
 	Mutation: {
 		createPrestamo: async (_, { token, prestamo }) => {
@@ -44,8 +54,6 @@ const resolvers = {
 			else
 				throw "Autenticacion invalida"
 		}
-		/* deletePrestamo: (_, { id }) =>
-			generalRequest(`${URL}/${id}`, 'DELETE') */
 	}
 };
 
