@@ -35,10 +35,12 @@ const resolvers = {
 	Mutation: {
 		createPrestamo: async (_, { token, prestamo }) => {
 			var response = await authToken(token) //Esperar por la respueseta
-			if (response.id)
-				return generalRequest(`${URL}`, 'POST', prestamo);
-			else
+			if (!response.id)
 				throw "Autenticacion invalida"
+			prestamo.student_id = response.id
+			prestamo.solicitud = Date()
+			
+			return generalRequest(`${URL}`, 'POST', prestamo);
 		},
 		updatePrestamo: async (_, { token, id, prestamo }) => {
 			var response = await authToken(token) //Esperar por la respueseta

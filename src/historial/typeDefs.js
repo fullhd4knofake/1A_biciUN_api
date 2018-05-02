@@ -7,9 +7,7 @@ type Prestamo {
 }
 
 input PrestamoInput {
-    student_id: Int!
     bici_id: Int!
-    solicitud: String
 }
 
 input PrestamoInputEdit {
