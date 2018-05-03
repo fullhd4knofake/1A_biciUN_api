@@ -38,7 +38,7 @@ const resolvers = {
 			var allPrestamos = await getRequest(URL, "");
 			var prestamosUsuario = []
 			allPrestamos.forEach(prestamo => {
-				if (prestamo.student_id == response.id && prestamo.entrega == "")
+				if (prestamo.student_id == response.id && (!prestamo.entrega || prestamo.entrega == ""))
 					prestamosUsuario.push(prestamo)
 			});
 			return prestamosUsuario
@@ -58,6 +58,7 @@ const resolvers = {
 			var response = await authToken(token) //Esperar por la respueseta
 			if (!response.id)
 				throw "Autenticacion invalida"
+			
 			prestamo.student_id = parseInt( response.id )
 			prestamo.solicitud = new Date()
 			
