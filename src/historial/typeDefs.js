@@ -4,28 +4,31 @@ type Prestamo {
     student_id: Int!
     bici_id: Int!
     solicitud: String
+    entrega: String
 }
 
 input PrestamoInput {
-    student_id: Int!
     bici_id: Int!
-    solicitud: String
 }
 
 input PrestamoInputEdit {
     student_id: Int
     bici_id: Int
     solicitud: String
+    entrega: String
 }
 `;
 
 export const prestamosQueries = `
-    allPrestamos: [Prestamo]!
-    prestamoById(id: Int!): Prestamo!
+    allPrestamos(token: String!): [Prestamo]!
+    prestamoById(token: String!, id: Int!): Prestamo!
+    prestamosbyUser(token: String!): [Prestamo]!
+    prestamosPendientes(token: String!): [Prestamo]!
 `;
 
 export const prestamosMutations = `
-    createPrestamo(prestamo: PrestamoInput!): Prestamo!
-    deletePrestamo(id: Int!): Prestamo!
-    updatePrestamo(id: Int!, prestamo: PrestamoInputEdit!): Prestamo!
+    entregarPrestamo(token: String!, id: Int!): Prestamo!
+    createPrestamo(token: String!, prestamo: PrestamoInput!): Prestamo!
+    deletePrestamo(token: String!, id: Int!): Prestamo!
+    updatePrestamo(token: String!, id: Int!, prestamo: PrestamoInputEdit!): Prestamo!
 `;

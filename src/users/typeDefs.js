@@ -18,12 +18,12 @@ input UserInput {
 `;
 
 export const usersQueries = `
-    allUsers: [User]!
-    userById(id: Int!): User!
+    allUsers(token: String!): [User]!
+    userById(token: String!): User!
 `;
 
 export const usersMutations = `
-    createUser(user: UserInput!): User!
-    deleteUser(id: Int!): User!
-    updateUser(id: Int!, user: UserInput!): User!
+    createUser(token: String!, user: UserInput!): User!
+    deleteUser(token: String!, id: Int!): User!
+    updateUser(token: String!, id: Int!, user: UserInput!): User!
 `;

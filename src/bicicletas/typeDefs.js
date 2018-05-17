@@ -22,12 +22,12 @@ input BicicletaInputEdit {
 `;
 
 export const bicicletasQueries = `
-    allBicicletas: [Bicicleta]!
-    bicicletaById(serial: Int!): Bicicleta!
+    allBicicletas(token: String!): [Bicicleta]!
+    bicicletaById(token: String!, serial: Int!): Bicicleta!
 `;
 
 export const bicicletasMutations = `
-    createBicicleta(bicicleta: BicicletaInput!): Bicicleta!
-    deleteBicicleta(serial: Int!): Bicicleta!
-    updateBicicleta(serial: Int!, bicicleta: BicicletaInputEdit!): Bicicleta!
+    createBicicleta(token: String!, bicicleta: BicicletaInput!): Bicicleta!
+    deleteBicicleta(token: String!, serial: Int!): Bicicleta!
+    updateBicicleta(token: String!, serial: Int!, bicicleta: BicicletaInputEdit!): Bicicleta!
 `;

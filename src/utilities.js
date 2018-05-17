@@ -1,5 +1,6 @@
 import request from 'request-promise-native';
 import { formatError } from 'graphql';
+import axios from "axios";
 
 /**
  * Creates a request following the given parameters
@@ -92,4 +93,52 @@ export function formatErr(error) {
 		return { message, code, description, path };
 	}
 	return data;
+}
+
+export function authToken(token) {
+	return new Promise( resolve => {
+		console.log(`http://35.193.172.140:3005/login/${token}`)
+		axios({
+			headers: { 'Content-Type': 'application/json' },
+			url: `http://35.193.172.140:3005/login/${token}`,
+			method: "GET",
+			responseType: 'json'
+		}).then(function (response) {
+			return {
+				date: response.data.date,
+				id: response.data.id
+			}
+		}).then((data) =>
+			resolve( data )
+		).catch((data) => {
+			resolve( data )
+		})
+	});
+}
+
+export function generateToken(id) {
+	return new Promise(resolve => {
+
+		const data = JSON.stringify({
+			id: id
+		});
+
+		console.log(`http://35.193.172.140:3005/login/`)
+		axios({
+			headers: { 'Content-Type': 'application/json' },
+			url: `http://35.193.172.140:3005/login`,
+			method: "POST",
+			responseType: 'json',
+			data: data
+		}).then(function (response) {
+			return {
+				expire: response.data.date,
+				token: response.data.token
+			}
+		}).then((data) =>
+			resolve(data)
+		).catch((data) => {
+			resolve(data)
+		})
+	});
 }

@@ -21,11 +21,11 @@ import {
 	profilePicturesTypeDef
 } from './profilepictures/typeDefs';
 	
-import {
-	loginMutations,
-	loginQueries,
-	loginTypeDef
-} from './login/typeDefs';
+// import {
+// 	loginMutations,
+// 	loginQueries,
+// 	loginTypeDef
+// } from './login/typeDefs';
 
 import {
 	bicicletasMutations,
@@ -37,24 +37,19 @@ import {
 	authMutations,
 	authTypeDef
 } from './auth/typeDefs';
-/* import {
-	coursesMutations,
-	coursesQueries,
-	coursesTypeDef
-} from './courses/typeDefs';
 
 import {
-	gradesMutations,
-	gradesQueries,
-	gradesTypeDef
-} from './grades/typeDefs'; */
+	estacionesQueries,
+	estacionesTypeDef
+} from './estaciones/typeDefs';
 
 import usersResolvers from './users/resolvers';
 import prestamosResolvers from './historial/resolvers';
 import profilepicturesResolvers from './profilepictures/resolvers';
-import loginResolvers from './login/resolvers';
 import bicicletasResolvers from './bicicletas/resolvers';
 import authResolvers from './auth/resolvers';
+import estacionesResolvers from "./estaciones/resolvers";
+// import loginResolvers from './login/resolvers';
 // import coursesResolvers from './courses/resolvers';
 // import gradesResolvers from './grades/resolvers';
 
@@ -65,19 +60,21 @@ const mergedTypeDefs = mergeSchemas(
 		usersTypeDef,
 		prestamosTypeDef,
 		profilePicturesTypeDef,
-		loginTypeDef,
 		bicicletasTypeDef,
-		authTypeDef
+		authTypeDef,
+		estacionesTypeDef
+		// loginTypeDef,
 		// usersTypeDef,
 		// coursesTypeDef,
 		// gradesTypeDef
 	],
 	[
+		estacionesQueries,
 		usersQueries,
 		prestamosQueries,
 		profilePicturesQueries,
-		loginQueries,
 		bicicletasQueries
+		// loginQueries,
 		// usersQueries,
 		// coursesQueries,
 		// gradesQueries
@@ -85,7 +82,6 @@ const mergedTypeDefs = mergeSchemas(
 	[
 		usersMutations,
 		prestamosMutations,
-		loginMutations,
 		bicicletasMutations,
 		authMutations
 		// usersMutations,
@@ -102,8 +98,9 @@ export default makeExecutableSchema({
 		usersResolvers,
 		prestamosResolvers,
 		profilepicturesResolvers,
-		loginResolvers,
 		bicicletasResolvers,
-		authResolvers
+		authResolvers,
+		estacionesResolvers
+		// loginResolvers,
 	)
 });
