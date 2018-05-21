@@ -16,8 +16,8 @@ input BicicletaInput {
 }
 
 input BicicletaInputEdit {
-    ubicacion: String!
-    estado: String!
+    ubicacion: String
+    estado: String
 }
 `;
 

@@ -97,10 +97,10 @@ export function formatErr(error) {
 
 export function authToken(token) {
 	return new Promise( resolve => {
-		console.log(`http://35.193.172.140:3005/login/${token}`)
+		console.log(`http://1a-login-ms:5000/login/${token}`)
 		axios({
 			headers: { 'Content-Type': 'application/json' },
-			url: `http://35.193.172.140:3005/login/${token}`,
+			url: `http://1a-login-ms:5000/login/${token}`,
 			method: "GET",
 			responseType: 'json'
 		}).then(function (response) {
@@ -123,10 +123,10 @@ export function generateToken(id) {
 			id: id
 		});
 
-		console.log(`http://35.193.172.140:3005/login/`)
+		console.log(`http://1a-login-ms:5000/login/`)
 		axios({
 			headers: { 'Content-Type': 'application/json' },
-			url: `http://35.193.172.140:3005/login`,
+			url: `http://1a-login-ms:5000/login`,
 			method: "POST",
 			responseType: 'json',
 			data: data
